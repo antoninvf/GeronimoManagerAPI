@@ -3,7 +3,7 @@ name: .NET Core Deploy to IIS
 on: 
   push:
     branches:
-      - "main"
+      - "master"
   workflow_dispatch:
 
 jobs:
