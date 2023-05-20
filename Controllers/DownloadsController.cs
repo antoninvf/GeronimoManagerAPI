@@ -52,6 +52,12 @@ public class DownloadsController : ControllerBase
     {
         return getFiles("").Where(x => Uri.EscapeDataString(x.Modpack.ToLower()).Equals(Uri.EscapeDataString(modpack.ToLower()))).ToList();
     }
+    
+    [HttpGet("modpacks/{modpack}/{version}")]
+    public ActionResult<CdnFile> GetVersionsForModpack(string modpack, string version)
+    {
+        return getFiles("").Where(x => Uri.EscapeDataString(x.Modpack.ToLower()).Equals(Uri.EscapeDataString(modpack.ToLower())) && x.Version.Contains(version)).ToList()[0];
+    }
 
     [HttpGet("modpacks")]
     public ActionResult<IEnumerable<string>> GetModpacks()
