@@ -23,7 +23,7 @@ public class DownloadsController : ControllerBase
         if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") path = "P:/cdn/geronimo";
 
         // recursively get all files in the directory and subdirectories
-        var files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
+        var files = Directory.GetFiles(path, "*.zip", SearchOption.AllDirectories);
         var fileList = new List<CdnFile>();
         foreach (var e in files)
         {
