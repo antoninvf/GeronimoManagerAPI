@@ -6,7 +6,7 @@ namespace GeronimoUpdaterAPI.Controllers;
 
 [EnableCors("flwn")]
 [ApiController]
-[Route("[controller]")]
+[Route("")]
 public class DownloadsController : ControllerBase
 {
     private readonly ILogger<DownloadsController> _logger;
